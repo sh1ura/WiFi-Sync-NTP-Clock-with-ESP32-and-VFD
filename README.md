@@ -55,4 +55,4 @@ Search for modules based on the “MT3608” IC.
 
 ## Enclosure
 
-* The VFD is intentionally left exposed to create a retrofuturistic, cyberpunk-inspired appearance.
+* The VFD is intentionally left exposed to create a retrofuturistic, steampunk-inspired appearance.
