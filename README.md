@@ -2,6 +2,8 @@
 
 A Wi-Fi–synchronized (NTP) clock built with an ESP32 and a VFD (Vacuum Fluorescent Display) salvaged from an old calculator.
 
+Please take a look at the related Instractables, [https://www.instructables.com/A-Modern-Calculator-and-Clock-From-a-Broken-50-Yea/](https://www.instructables.com/A-Modern-Calculator-and-Clock-From-a-Broken-50-Yea/)
+
 * In this project, a 6-digit VFD extracted from a broken CASIO MINI CM-602 (1973) was used.
 * The remaining case, keypad, and PCB from this calculator have been reborn as an RPN calculator.
 For details, please refer to this project: [RPN-calc-with-fractional-BCD](https://github.com/sh1ura/RPN-calc-with-fractional-BCD)
