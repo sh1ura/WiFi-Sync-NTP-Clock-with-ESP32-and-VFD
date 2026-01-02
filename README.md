@@ -2,6 +2,10 @@
 
 A Wi-Fi–synchronized (NTP) clock built with an ESP32 and a VFD (Vacuum Fluorescent Display) salvaged from an old calculator.
 
+* In this project, a 6-digit VFD extracted from a broken CASIO MINI CM-602 (1973) was used.
+* The remaining case, keypad, and PCB from this calculator have been reborn as an RPN calculator.
+For details, please refer to this project: [RPN-calc-with-fractional-BCD](https://github.com/sh1ura/RPN-calc-with-fractional-BCD)
+
 ## Video
 
 [![thumb](https://github.com/user-attachments/assets/9849487b-e39a-4aa6-ad1b-d3a3a4a657f1)](https://youtu.be/MaTxv_QstjQ)
@@ -36,8 +40,16 @@ Search for modules based on the “MT3608” IC.
 
 ## Code
 
+### Functions
+
 * The project uses [https://github.com/tzapu/WiFiManager](WifiManager) to configure and store the SSID and password on the ESP32.
 * The NTP server FQDN and local time zone are also configured via the WiFiManager web interface.
+
+### Modification of the code
+
+* List the GPIO pin numbers in the arrays named `segment[]` and `grid[]`.
+* In the `segment[]` array, order the pin numbers from segment `a` to `g` of the 7-segment display, followed by the pin for the decimal point.
+* In the `grid[]` array, order the pin numbers from left to right.
 
 ## Enclosure
 
