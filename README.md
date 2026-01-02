@@ -1,6 +1,6 @@
 # VFD WiFi Sync clock
 
-A WiFi Sync (NTP) clock with ESP32 and VFD (Vacuum Fluorescent Display) extracted from old calculator.
+A Wi-Fi–synchronized (NTP) clock built with an ESP32 and a VFD (Vacuum Fluorescent Display) salvaged from an old calculator.
 
 ## Video
 
@@ -11,24 +11,34 @@ Click the image above to play the video.
 
 ![circuit](https://github.com/user-attachments/assets/6cfd5ac1-3c4a-4d1f-ac30-27e8ac6ca0d2)
 
-### for grids and anodes (segment)
+### For grids and anodes (segments)
 
-Generally, VFD requires relatively high voltage (around 25V) to turn on the segments.
-I use Mitsubishi M54564P transistor array (source-type driver) IC to switch 25V by 3.3V logic level output from ESP32.
-In this case, any pullup / pulldown resistors are required.
+VFDs generally require a relatively high voltage (around 25 V) to drive the grids and anode segments.
+In this design, Mitsubishi Electric M54564P transistor array ICs (source-type drivers) are used to switch 25 V signals using the 3.3 V logic outputs from the ESP32.
 
-### for the cathode (heater filament)
+* An M54564P can be purchased in Japan for about 50 JPY (≈ 0.3 USD) from　<a href="https://akizukidenshi.com/catalog/g/g116842/">Akizuki Denshi</a>.
+* A single M54564P can drive up to 8 grids and/or anode segments.
+* No external pull-up or pull-down resistors are required.
 
-Usually low voltage (around 1V) is applied to the heater. Instead of preparing 1V power source, I used 5V and a registor.
+### For the cathode (heater filament)
+
+The VFD heater filament typically requires a low voltage (around 1V).
+Instead of preparing a dedicated low-voltage power supply, a series resistor is used to drive the filament from a 5V source.
+
 1. Measure the resistance of the heater filament.
-2. Start from a 5x resistor of the heater filament. For example, I used 40ohm for 8ohm heater filament.
-3. Tune the resistance to get appropriate brightness of the segments. Do not feed too high current or it damages the filament.
+2. Start with a series resistor approximately 5× the filament resistance. For example, a 40 Ω resistor was used for an 8 Ω filament.
+3. Adjust the resistance to achieve appropriate brightness. Avoid excessive current, as it may damage the filament.
+
+### DC-DC converter
+
+Low-cost boost DC–DC converters capable of generating 5–28V are widely available.
+Search for modules based on the “MT3608” IC.
 
 ## Code
 
-* It uses [https://github.com/tzapu/WiFiManager](WifiManager) to resister the SSID and password to ESP32.
-* FQDN of the NTP server and your time zone are also registered from the WifiManager interface.
+* The project uses [https://github.com/tzapu/WiFiManager](WifiManager) to configure and store the SSID and password on the ESP32.
+* The NTP server FQDN and local time zone are also configured via the WiFiManager web interface.
 
 ## Enclosure
 
-* I exposed VFD in the air to give retrofuturistic cyberpunk taste.
+* The VFD is intentionally left exposed to create a retrofuturistic, cyberpunk-inspired appearance.
