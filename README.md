@@ -1,6 +1,7 @@
 # WiFi Sync (NTP) clock with ESP32 and VFD (Vacuum Fluorescent Display) extracted from old calculator
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MaTxv_QstjQ?si=l_zvYX4OIr8cE5to" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![thumb](https://github.com/user-attachments/assets/9849487b-e39a-4aa6-ad1b-d3a3a4a657f1)](https://youtu.be/MaTxv_QstjQ)
+
 
 ## Circuit
 
