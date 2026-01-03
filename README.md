@@ -46,6 +46,7 @@ Search for modules based on the “MT3608” IC.
 
 * The project uses [https://github.com/tzapu/WiFiManager](WifiManager) to configure and store the SSID and password on the ESP32.
 * The NTP server FQDN and local time zone are also configured via the WiFiManager web interface.
+  - find the name of timezone from https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
 
 ### Modification of the code
 
