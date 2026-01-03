@@ -127,7 +127,7 @@ void setup() {
 
   timer = timerBegin(1000000L);
   timerAttachInterrupt(timer, &onTimer);
-  timerAlarm(timer, 2000, true, 0); // 2ms for each digit * 6 digit = 12ms cycle (83 Hz dynamic drive)
+  timerAlarm(timer, 1000, true, 0); // 1ms for each digit * 6 digit = 6ms cycle (167 Hz dynamic drive)
 
   wifiSetup();
   getNTP(); // get current time
@@ -162,7 +162,7 @@ void loop() {
 
   if(tmtime.tm_hour == 4 &&
     tmtime.tm_min == 0 &&
-    tmtime.tm_sec == 0) {// get current time via NTP every 6 hours
+    tmtime.tm_sec == 0) {// get current time via NTP everyday
       getNTP();
   }
 }
